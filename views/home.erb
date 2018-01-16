@@ -1,4 +1,12 @@
 <div>
-  <%= @scraper_util.return_urls %>
-  <p>Hello world!</p>
+  <% submitted_urls = @scraper_util.return_urls %>
+  <% submitted_urls.each do |news_item| %>
+  <div class="url-item">
+
+  <a href="<%= news_item[:url] %>">
+    <p><%= news_item[:content] %> </p>
+  </a>
+    <p><%= "&nbsp;" + news_item[:news_org] %></p>
+  </div>
+  <% end %>
 </div>
