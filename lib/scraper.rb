@@ -7,18 +7,33 @@ class Scraper
 
   def initialize()
 
-    doc = HTTParty.get("http://www.bbc.co.uk/news/business-42703549")
-    @parse_page ||= Nokogiri::HTML(doc)
+    return scrape("https://www.theguardian.com/environment/2018/jan/16/eu-declares-war-on-plastic-waste-2030")
 
   end
 
-  def headline
-    headline = parse_page.css(".story-body__h1").children
-    # .map { |name| name.text  }.compact
+  def scrape(url)
+    @doc = HTTParty.get(url)
+    if (url.include? "bbc")
+      headline()
+    elsif (url.include? "guardian")
+      guardian()
+    end
+  end
+
+  def headline()
+    parse_page ||= Nokogiri::HTML(@doc)
+    headline = parse_page.css(".story-body__h1")
+    p headline.children.text
+  end
+
+  def guardian()
+    parse_page ||= Nokogiri::HTML(@doc)
+    headline = parse_page.css(".content__headline")
+    p headline.children.text.gsub("\n",'')
   end
 
   scraper = Scraper.new
-  the_headline = scraper.headline
-  p the_headline
+  # p scraper.headline.children.text
+  # p the_headline.children.text
 
 end
