@@ -61,11 +61,6 @@ class Scraper
     p my_url_object
   end
 
-  def bbc()
-    parse_page ||= Nokogiri::HTML(@doc)
-    headline = parse_page.css(".story-body__h1")
-    p headline.children.text
-  end
 
   def guardian()
     parse_page ||= Nokogiri::HTML(@doc)
