@@ -7,6 +7,8 @@ class Scraper
 
   def initialize()
 
+    @submitted_urls = []
+
     url_array = ["http://www.bbc.co.uk/news/business-42703549", "http://www.eveningtimes.co.uk/news/15837175.Heavy_snow_hits_Glasgow_roads_and_schools_as_Met_Office_upgrades_weather_warning_to_amber/"]
 
     return scrape(url_array)
@@ -58,7 +60,8 @@ class Scraper
       "news_org": news_org,
       "url": url
     }
-    p my_url_object
+    @submitted_urls.push(my_url_object)
+    p @submitted_urls
   end
 
 
@@ -144,6 +147,10 @@ class Scraper
     parse_page ||= Nokogiri::HTML(@doc)
     headline = parse_page.css("h1[class='headline semi-loud']")
     p headline.children.text
+  end
+
+  def return_urls()
+    return @submitted_urls
   end
 
   scraper = Scraper.new
