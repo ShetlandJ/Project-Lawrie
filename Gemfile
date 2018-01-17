@@ -1,6 +1,6 @@
 source "https://rubygems.org" do
   gem "sinatra"
-  gem "Nokogiri"
-  gem "HTTParty"
+  gem "nokogiri"
+  gem "httparty"
 end
-ruby "2.4.0p0"
+ruby "2.4.0"
