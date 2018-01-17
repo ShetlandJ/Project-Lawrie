@@ -4,7 +4,8 @@
   <% submitted_urls = @scraper_util.return_urls %>
   <% if submitted_urls.length < 1 %>
   <p>You didn't submit any links!</p>
-  <% end %>
+  <% else %>
+
   <% submitted_urls.each do |news_item| %>
 
   <div class="url-item">
@@ -24,5 +25,6 @@
 
 </div>
 
+<% end %>
 <% end %>
 </div>
