@@ -1,1 +1,1 @@
-web: bundle exec app.rb
+web: app.rb
