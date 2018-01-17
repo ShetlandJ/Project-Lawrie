@@ -44,6 +44,9 @@ class Scraper
       produce_url(url, "h1[class='headline semi-loud']", "(The Herald)")
     elsif (url.include? "scotsman.com")
       produce_url(url, ".article-header__title", "(The Scotsman)")
+    else
+      p url
+      produce_url_unlisted(url)
     end
   end
 
@@ -69,12 +72,30 @@ class Scraper
     @submitted_urls.push(my_url_object)
   end
 
+  def produce_url_unlisted(url)
+    my_url_object = {
+      "content": "Sorry, but we don't have that organisation on record, or the link you supplied did not work. ERROR URL: (#{url})",
+      "news_org": "",
+      "url": ""
+    }
+    @submitted_urls.push(my_url_object)
+  end
+
+
   def return_urls()
     return @submitted_urls
   end
 
+  def alphabetise(arr, rev=false)
+    if rev
+      arr.sort.reverse
+    else
+      arr.sort
+    end
+  end
+
   def return_orgs()
-    return @news_organisations
+    return alphabetise(@news_organisations, false)
   end
 
   def add_url_list_to_submitted_urls(submitted_url)

@@ -47,3 +47,7 @@ textarea {
   display: flex;
   width: 100vw;
 }
+
+.news-org-item {
+  margin: 0;
+}

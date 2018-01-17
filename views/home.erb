@@ -9,9 +9,10 @@
     <input type="submit" id="submit-btn" value="Generate Media Monitor" />
   </form>
 
+  <h2>Current news organisations:</h2>
   <% news_orgs = @scraper_util.return_orgs %>
   <% news_orgs.each do |news_org| %>
-    <p><%= news_org %> </p>
+    <p class="news-org-item"><%= news_org %> </p>
   <% end %>
 
 
