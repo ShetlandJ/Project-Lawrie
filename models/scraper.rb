@@ -10,9 +10,6 @@ class Scraper
     @submitted_urls = []
     @news_organisations = ["BBC", "Guardian", "Independent", "Evening Times", "The Times", "This Is Money", "The Sun", "Mirror", "Credit Strategy", "Credit Connect", "Reuters", "Daily Record", "Herald", "Scotsman"]
 
-    return @submitted_urls
-    return @news_organisations
-
   end
 
   def scrape(url)
