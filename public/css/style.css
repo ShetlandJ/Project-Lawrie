@@ -1,13 +1,48 @@
-.url-item {
+body {
+  font-family: ralewaysemibold, Helvetica, Arial, sans-serif;
+}
+
+.submit-form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#submit-btn {
+  width: 20%;
+  background-color: #FFFFFF;
+  color: black;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+input#submit-btn:hover {
+  background-color: #8B6297;
+  color: white;
 }
 
 textarea {
   width: 600px;
   height: 250px;
   font-size: 16px;
+  border-radius: 1%;
+}
+
+#home-btn {
+  background-color: #EE8A30;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+.label {
+  margin-bottom: 10px;
 }
 
 .url-item {
-  width: 70vw;
+  display: flex;
+  width: 100vw;
 }

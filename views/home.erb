@@ -1,18 +1,9 @@
-<form action="/results" method="post">
-  <label>Submit your URL: </label>
+<div id="container">
+
+  <form action="/results" method="post" class="submit-form">
+    <label class="label">Submit your URLs: </label>
     <textarea name="urls"></textarea>
-  <input type="submit" />
-</form>
+    <input type="submit" id="submit-btn" value="Generate Media Monitor" />
+  </form>
 
-<div>
-  <% submitted_urls = @scraper_util.return_urls %>
-  <% submitted_urls.each do |news_item| %>
-  <div class="url-item">
-
-  <a href="<%= news_item[:url] %>">
-    <p><%= news_item[:content] %> </p>
-  </a>
-    <p><%= "&nbsp;" + news_item[:news_org] %></p>
-  </div>
-  <% end %>
 </div>
