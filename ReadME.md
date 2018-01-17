@@ -16,4 +16,4 @@ The code makes use of some excellent Ruby Gems such as `nokogiri` and `httparty`
 
 ## Gif of app
 
-<img src="https://media.giphy.com/media/26gmgQ0TxyURl0SXK/giphy.gif" alt="A gif of how the app works" width="650px"  />
+<img src="https://im5.ezgif.com/tmp/ezgif-5-5f39a988f0.gif" alt="A gif of how the app works" width="650px"  />
