@@ -2,6 +2,8 @@
 
 Project Lawrie was a commissioned webscraper project for StepChange Debt Charity. It takes its name from the employee who would be using the app.
 
+Accessible here: https://project-lawrie.herokuapp.com/
+
 ## App purpose
 
 Lawrie wanted a simple website that could: 
