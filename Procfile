@@ -1,1 +1,1 @@
-web: app.rb
+web: ruby app.rb
