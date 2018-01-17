@@ -8,13 +8,14 @@ class Scraper
   def initialize()
 
     @submitted_urls = []
+    @news_organisations = ["BBC", "Guardian", "Independent", "Evening Times", "The Times", "This Is Money", "The Sun", "Mirror", "Credit Strategy", "Credit Connect", "Reuters", "Daily Record", "Herald", "Scotsman"]
 
     return @submitted_urls
+    return @news_organisations
 
   end
 
   def scrape(url)
-    # for url in url_array
     @doc = HTTParty.get(url)
     if (url.include? "bbc.co.uk")
       produce_url(url, ".story-body__h1", "(BBC News)")
@@ -46,7 +47,6 @@ class Scraper
       produce_url(url, "h1[class='headline semi-loud']", "(The Herald)")
     elsif (url.include? "scotsman.com")
       produce_url(url, ".article-header__title", "(The Scotsman)")
-      # end
     end
   end
 
@@ -74,6 +74,10 @@ class Scraper
 
   def return_urls()
     return @submitted_urls
+  end
+
+  def return_orgs()
+    return @news_organisations
   end
 
   def add_url_list_to_submitted_urls(submitted_url)

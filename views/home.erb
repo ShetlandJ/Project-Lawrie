@@ -1,9 +1,18 @@
 <div id="container">
 
   <form action="/results" method="post" class="submit-form">
-    <label class="label">Submit your URLs: </label>
-    <textarea name="urls"></textarea>
+    <label class="label"><h3>Submit your URLs:</h3> </label>
+
+    <% placeholder = "Links must be separated by a comma and space, like so:\n\nwww.stepchange.org, http://www.google.com\n\nThe ensure that the links have http:// before them." %>
+
+    <textarea placeholder="<%= placeholder %>" name="urls"></textarea>
     <input type="submit" id="submit-btn" value="Generate Media Monitor" />
   </form>
+
+  <% news_orgs = @scraper_util.return_orgs %>
+  <% news_orgs.each do |news_org| %>
+    <p><%= news_org %> </p>
+  <% end %>
+
 
 </div>
