@@ -13,3 +13,7 @@ Lawrie wanted a simple website that could:
 The app requires a very basic output screen, hence the lack of much styling. That may be changed in the future.
 
 The code makes use of some excellent Ruby Gems such as `nokogiri` and `httparty` to aid with webscraping. 
+
+## Gif of app
+
+<img src="https://media.giphy.com/media/26gmgQ0TxyURl0SXK/giphy.gif" alt="A gif of how the app works" />
