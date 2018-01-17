@@ -10,5 +10,11 @@ end
 
 post '/results' do
   @scraper_util = Scraper.new
-  @users_urls = params['urls']
+  @submitted_urls = params['urls'].split(', ')
+  @submitted_urls.each do |news_item|
+    @scraper_util.scrape(news_item)
+  end
+
+
+  erb ( :results )
 end
