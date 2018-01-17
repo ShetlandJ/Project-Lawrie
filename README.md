@@ -6,10 +6,10 @@ Accessible here: https://project-lawrie.herokuapp.com/
 
 ## App purpose
 
-Lawrie wanted a simple website that could: 
+Lawrie wanted a simple program that could: 
 
-- scrape URLs he had submitted 
-- grab some content from those URLs 
+- gather URLs he had submitted 
+- scrape some content from those URLs 
 - return it formatted in a way that he could easily distribute via email to his colleagues.
 
 The app requires a very basic output screen, hence the lack of much styling. That may be changed in the future.
