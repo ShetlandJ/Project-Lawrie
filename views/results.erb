@@ -2,20 +2,26 @@
 
 <div>
   <% submitted_urls = @scraper_util.return_urls %>
+  <% if submitted_urls.length < 1 %>
+  <p>You didn't submit any links!</p>
+  <% end %>
   <% submitted_urls.each do |news_item| %>
-  <div class="url-item">
-    <% if news_item[:news_org].length > 0 %>
 
+  <div class="url-item">
+
+    <% if news_item[:news_org].length > 0 %>
     <a href="<%= news_item[:url] %>">
       <p><%= news_item[:content] %> </p>
     </a>
     <p><%= "&nbsp;" + news_item[:news_org] %></p>
+
     <% else %>
     <p><%= news_item[:content] %> </p>
   </a>
   <p><%= "&nbsp;" + news_item[:news_org] %></p>
 
   <% end %>
+
 </div>
 
 <% end %>
