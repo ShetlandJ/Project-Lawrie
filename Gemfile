@@ -3,4 +3,5 @@ source "https://rubygems.org" do
   gem "nokogiri"
   gem "httparty"
 end
+
 ruby "2.4.0"
