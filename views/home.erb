@@ -1,3 +1,9 @@
+<form action="/results" method="post">
+  <label>Submit your URL: </label>
+    <textarea name="urls"></textarea>
+  <input type="submit" />
+</form>
+
 <div>
   <% submitted_urls = @scraper_util.return_urls %>
   <% submitted_urls.each do |news_item| %>

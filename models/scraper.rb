@@ -78,6 +78,10 @@ class Scraper
     return @submitted_urls
   end
 
+  def add_url_list_to_submitted_urls(submitted_url)
+    @submitted_url.push(submitted_url)
+  end
+
   scraper = Scraper.new
 
 end
