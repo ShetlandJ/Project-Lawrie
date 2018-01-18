@@ -47,13 +47,13 @@ class Scraper
       produce_url(url, ".article-header__title", "(The Scotsman)")
     elsif (url.include? "irishtimes.com")
       produce_irish_url(url, "h1[property='headline']", "(Irish Times)")
+    elsif (url.include? "independent.ie")
+      produce_irish_url(url, "h1", "(Irish Independent)")
     else
-      p url
       produce_url_unlisted(url)
     end
   end
 
-#   Irish Times
 # Irish Independent
 # Irish Examiner
 # RTE
