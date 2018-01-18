@@ -16,11 +16,9 @@ StepChange wanted a simple program that could:
 
 The app requires a very basic output screen, hence the lack of much styling. That may be changed in the future.
 
+The main page has a list of news agencies that it will work with. The news stories must be submitted as comma + space delimited. 
+
 The code makes use of some excellent Ruby Gems such as `nokogiri` and `httparty` to aid with webscraping. 
-
-## Gif of app
-
-<img src="https://im5.ezgif.com/tmp/ezgif-5-5f39a988f0.gif" alt="A gif of how the app works" width="650px"  />
 
 ## App outcomes
 
