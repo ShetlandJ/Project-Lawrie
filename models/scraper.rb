@@ -49,13 +49,15 @@ class Scraper
       produce_irish_url(url, "h1[property='headline']", "(Irish Times)")
     elsif (url.include? "independent.ie")
       produce_irish_url(url, "h1", "(Irish Independent)")
+    elsif (url.include? "irishexaminer.com")
+      produce_irish_url(url, "h1", "(Irish Examiner)")
+    elsif (url.include? "rte.ie")
+      produce_irish_url(url, "h1[data-epic-field='title']", "(RTE)")
     else
       produce_url_unlisted(url)
     end
   end
 
-# Irish Independent
-# Irish Examiner
 # RTE
 
   def produce_url(url, css, news_org)
