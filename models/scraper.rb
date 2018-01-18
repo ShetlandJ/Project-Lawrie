@@ -9,7 +9,7 @@ class Scraper
 
     @submitted_urls = []
     @irish_urls = []
-    @news_organisations = ["BBC", "Guardian", "Independent", "Evening Times", "The Times", "This Is Money", "The Sun", "Mirror", "Credit Strategy", "Credit Connect", "Reuters", "Daily Record", "Herald", "Scotsman"]
+    @news_organisations = ["BBC", "Guardian", "Independent", "Evening Times", "The Times", "This Is Money", "The Sun", "Mirror", "Credit Strategy", "Credit Connect", "Reuters", "Daily Record", "Herald", "Scotsman", "Irish Times", "Irish Independent", "Irish Examiner", "RTE"]
 
   end
 
