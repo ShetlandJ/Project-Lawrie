@@ -8,6 +8,7 @@ class Scraper
   def initialize()
 
     @submitted_urls = []
+    @irish_urls = []
     @news_organisations = ["BBC", "Guardian", "Independent", "Evening Times", "The Times", "This Is Money", "The Sun", "Mirror", "Credit Strategy", "Credit Connect", "Reuters", "Daily Record", "Herald", "Scotsman"]
 
   end
@@ -44,11 +45,18 @@ class Scraper
       produce_url(url, "h1[class='headline semi-loud']", "(The Herald)")
     elsif (url.include? "scotsman.com")
       produce_url(url, ".article-header__title", "(The Scotsman)")
+    elsif (url.include? "irishtimes.com")
+      produce_irish_url(url, "h1[property='headline']", "(Irish Times)")
     else
       p url
       produce_url_unlisted(url)
     end
   end
+
+#   Irish Times
+# Irish Independent
+# Irish Examiner
+# RTE
 
   def produce_url(url, css, news_org)
     parse_page ||= Nokogiri::HTML(@doc)
@@ -59,6 +67,17 @@ class Scraper
       "url": url
     }
     @submitted_urls.push(my_url_object)
+  end
+
+  def produce_irish_url(url, css, news_org)
+    parse_page ||= Nokogiri::HTML(@doc)
+    headline = parse_page.css(css)
+    my_url_object = {
+      "content": headline.children.text,
+      "news_org": news_org,
+      "url": url
+    }
+    @irish_urls.push(my_url_object)
   end
 
   def produce_url_gsub(url, css, news_org)
@@ -97,6 +116,11 @@ class Scraper
   def return_orgs()
     return alphabetise(@news_organisations, false)
   end
+
+  def return_irish_urls()
+    return @irish_urls
+  end
+
 
   def add_url_list_to_submitted_urls(submitted_url)
     @submitted_url.push(submitted_url)
