@@ -13,7 +13,5 @@ post '/results' do
   @submitted_urls.each do |news_item|
     @scraper_util.scrape(news_item)
   end
-
-
   erb ( :results )
 end

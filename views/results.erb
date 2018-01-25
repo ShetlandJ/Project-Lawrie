@@ -35,9 +35,9 @@
   <p>You didn't submit any Irish news stories!</p>
   <% else %>
 
+  <h2>Irish stories:</h2>
   <% irish_urls.each do |news_item| %>
 
-  <h2>Irish stories:</h2>
   <div class="url-item">
     <% if news_item[:news_org].length > 0 %>
     <a href="<%= news_item[:url] %>">
